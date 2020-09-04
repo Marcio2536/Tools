@@ -120,21 +120,15 @@ Proxy:
 # 配置开始
 - name: "V2ray节点的主机测试"
   type: vmess
-  server: v2rayssr.com
+  server: www.mcculley.me
   port: 443
-  uuid: 5b8098e0-c95d-4c74-b5d5-4a330969c8cb
-  alterId: 2
+  uuid: 05a184d1-ecf5-425d-bf04-24ae2076ed99
+  alterId: 233
   cipher: auto
   tls: true
   network: ws
-  ws-path: /v2rayssrcom/
-  Host: v2rayssr.com
-
-- name: "Trojan节点的主机测试"
-  type: trojan
-  server: www.v2rayssr.com
-  port: 443
-  password: v2rayssr.com
+  ws-path: /de0a4c2dcfcf3/
+  Host: www.mcculley.me
 
  
 ###############################################################配置分割线
@@ -147,7 +141,6 @@ Proxy Group:
   type: url-test
   proxies:
     - "V2ray节点的主机测试"
-    - "Trojan节点的主机测试"
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
 
@@ -157,7 +150,6 @@ Proxy Group:
   proxies:
     - "自动节点选择"
     - "V2ray节点的主机测试"
-    - "Trojan节点的主机测试"
 # 白名单模式 PROXY，黑名单模式 DIRECT
 - name: "Final"
   type: select
@@ -176,14 +168,12 @@ Proxy Group:
   proxies:
     - "PROXY"
     - "V2ray节点的主机测试"
-    - "Trojan节点的主机测试"
 # 大陆流媒体面向港澳台限定服务
 - name: "HKMTMedia"
   type: select
   proxies:
     - "DIRECT"
     - "V2ray节点的主机测试"
-    - "Trojan节点的主机测试"
 # 运营商及声名狼藉网站劫持
 - name: "Hijacking"
   type: select
